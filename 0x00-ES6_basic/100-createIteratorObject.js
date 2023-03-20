@@ -8,7 +8,6 @@ function getEmployees(departments) {
 
 export default function createIteratorObject(report) {
   const employees = getEmployees(report.allEmployees);
-  console.log(employees);
   return {
     [Symbol.iterator]() {
       let counter = 0;
