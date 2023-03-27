@@ -8,6 +8,10 @@ export default class Pricing {
     return `${this._amount} ${this._currency.displayFullCurrency()}`;
   }
 
+  static convertPrice(amount, conversionRate) {
+    return (amount * conversionRate);
+  }
+
   get amount() {
     return this._amount;
   }
