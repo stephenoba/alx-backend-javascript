@@ -8,7 +8,7 @@ const countStudents = (path) => {
     console.log(`Number of students: ${data.length - 1}`);
     for (let i = 1; i < data.length; i += 1) {
       const info = data[i].split(',');
-      const firstname = info[0];
+      const firstname = info[0].trim();
       const field = info[3].trim();
       if (!studentsCount[field]) {
         studentsCount[field] = { count: 0, students: '' };
