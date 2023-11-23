@@ -4,7 +4,7 @@ const countStudents = (path) => {
   const studentsCount = {};
   try {
     const data = fs.readFileSync(path).toString('UTF8').split('\n');
-    process.stdout.write(`Number of students: ${data.length - 1}\n`);
+    console.log(`Number of students: ${data.length - 1}`);
     for (let i = 1; i < data.length; i += 1) {
       const info = data[i].split(',');
       const firstname = info[0];
@@ -22,8 +22,8 @@ const countStudents = (path) => {
   }
   for (const item in studentsCount) {
     if (Object.hasOwn(studentsCount, item)) {
-      process.stdout.write(
-        `Number of students in ${item}: ${studentsCount[item].count}. List: ${studentsCount[item].students}\n`,
+      console.log(
+        `Number of students in ${item}: ${studentsCount[item].count}. List: ${studentsCount[item].students}`,
       );
     }
   }
