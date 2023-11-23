@@ -4,7 +4,7 @@ const countStudents = (path) => {
   const studentsCount = {};
   try {
     const data = fs.readFileSync(path).toString('UTF8').split('\n');
-    process.stdout.write(`Number of Students: ${data.length - 1}\n`);
+    process.stdout.write(`Number of students: ${data.length - 1}\n`);
     for (let i = 1; i < data.length; i += 1) {
       const info = data[i].split(',');
       const firstname = info[0];
