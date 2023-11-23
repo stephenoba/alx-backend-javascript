@@ -4,12 +4,12 @@ const countStudents = (path) => {
   // output database content
   const studentsCount = {};
   try {
-    const data = fs.readFileSync(path).toString('UTF8').split('\n');
+    const data = fs.readFileSync(path).toString('UTF8').trim().split('\n');
     console.log(`Number of students: ${data.length - 1}`);
     for (let i = 1; i < data.length; i += 1) {
       const info = data[i].split(',');
-      const firstname = info[0].trim();
-      const field = info[3].trim();
+      const firstname = info[0];
+      const field = info[3];
       if (!studentsCount[field]) {
         studentsCount[field] = { count: 0, students: '' };
       }
