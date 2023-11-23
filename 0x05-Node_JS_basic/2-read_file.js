@@ -1,6 +1,7 @@
 const fs = require('fs');
 
 const countStudents = (path) => {
+  // output database content
   const studentsCount = {};
   try {
     const data = fs.readFileSync(path).toString('UTF8').split('\n');
